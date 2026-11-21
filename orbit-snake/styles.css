@@ -1,0 +1,203 @@
+:root {
+  --bg: #05060a;
+  --bg-elev: #0b1020;
+  --text: #e8eef8;
+  --muted: rgba(232, 238, 248, 0.7);
+  --mint: #5dffb0;
+  --core: #7ec8ff;
+  --orb: #ffd56a;
+  --ring: #5078b4;
+  --danger: #c07050;
+  --max: 42rem;
+  --pad: 1.25rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Avenir Next", "Segoe UI", Helvetica, Arial, sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(126, 200, 255, 0.12), transparent 55%),
+    radial-gradient(ellipse 40% 30% at 85% 20%, rgba(93, 255, 176, 0.08), transparent 50%),
+    var(--bg);
+  line-height: 1.55;
+}
+
+a {
+  color: var(--mint);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.15em;
+}
+
+a:hover {
+  color: var(--core);
+}
+
+.wrap {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: calc(var(--pad) + 0.5rem) var(--pad) 3rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.75rem;
+}
+
+.brand-mark {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.65rem;
+  background: var(--bg-elev);
+  border: 1px solid rgba(80, 120, 180, 0.45);
+  position: relative;
+  flex-shrink: 0;
+}
+
+.brand-mark::before {
+  content: "";
+  position: absolute;
+  inset: 28%;
+  border-radius: 50%;
+  background: var(--core);
+  box-shadow: 0 0 12px rgba(126, 200, 255, 0.55);
+}
+
+.brand-mark::after {
+  content: "";
+  position: absolute;
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  background: var(--mint);
+  top: 12%;
+  left: 42%;
+  box-shadow: 0 0 8px rgba(93, 255, 176, 0.7);
+}
+
+.brand strong {
+  font-size: 1.15rem;
+  letter-spacing: 0.02em;
+}
+
+.brand span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 400;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(80, 120, 180, 0.35);
+}
+
+nav a {
+  color: var(--core);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+nav a[aria-current="page"] {
+  color: var(--mint);
+  font-weight: 600;
+}
+
+h1 {
+  font-size: clamp(1.75rem, 4vw, 2.35rem);
+  line-height: 1.2;
+  margin: 0 0 0.75rem;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: 1.2rem;
+  margin: 2rem 0 0.6rem;
+  color: var(--core);
+}
+
+p,
+li {
+  color: var(--muted);
+}
+
+.lead {
+  font-size: 1.05rem;
+  color: var(--text);
+  margin-top: 0;
+}
+
+.meta {
+  color: var(--ring);
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.card-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+}
+
+.card-list li {
+  margin: 0.75rem 0;
+  padding: 1rem 1.1rem;
+  background: rgba(11, 16, 32, 0.75);
+  border: 1px solid rgba(80, 120, 180, 0.35);
+  border-radius: 0.75rem;
+}
+
+.card-list strong {
+  display: block;
+  color: var(--text);
+  margin-bottom: 0.25rem;
+}
+
+.cta {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.65rem 1.1rem;
+  border-radius: 0.55rem;
+  background: rgba(40, 70, 110, 0.75);
+  border: 1px solid rgba(120, 180, 255, 0.45);
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.cta:hover {
+  color: var(--mint);
+}
+
+footer {
+  margin-top: 3rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(80, 120, 180, 0.35);
+  font-size: 0.85rem;
+  color: var(--ring);
+}
+
+ul {
+  padding-left: 1.2rem;
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.9em;
+  color: var(--orb);
+}

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Orbit Snake &mdash; AppsNja</title>
+  <meta name="description" content="Orbit Snake: guide a neon snake around circular orbits. Jump between rings, eat orbs, dodge asteroids.">
+  <meta name="theme-color" content="#04050a">
+  <meta property="og:title" content="Orbit Snake">
+  <meta property="og:description" content="Neon orbits. One-thumb arcade.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="../assets/fonts/BarlowCondensed-800i.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/JetBrainsMono.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="page-app" data-app="orbit-snake">
+  <canvas id="abyss" class="abyss" aria-hidden="true"></canvas>
+  <div class="veil" aria-hidden="true"></div>
+  <div id="portal" class="portal is-active is-cover" aria-hidden="true"></div>
+
+  <div class="cursor" aria-hidden="true">
+    <span class="cursor__dot"></span>
+    <span class="cursor__ring"><span class="cursor__label">Open</span></span>
+  </div>
+
+  <main id="app" class="view view--inner" aria-labelledby="app-title">
+    <a id="back" class="back mono" href="../"><span class="back__arrow">&larr;</span> Return to the abyss</a>
+
+    <div class="inner">
+      <h1 id="app-title" class="inner__title">
+        <span class="line"><span class="rise">Orbit</span></span>
+        <span class="line"><span class="rise">Snake</span></span>
+      </h1>
+
+      <figure class="card rise-card">
+        <canvas id="card-screen" class="card__screen" aria-hidden="true"></canvas>
+        <figcaption class="card__cap mono"><span>01</span><span>Neon orbits. One-thumb arcade.</span></figcaption>
+      </figure>
+
+      <div class="inner__copy">
+        <p class="rise-txt">Guide a neon snake around circular orbits.</p>
+        <p class="rise-txt">Jump between rings, eat orbs, dodge asteroids.</p>
+        <p class="rise-txt">Chase a new best score, or take on the Daily Challenge.</p>
+        <a id="play-link" class="play rise-txt" href="#" target="_blank" rel="noopener">
+          <svg class="play__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3.5v17l14-8.5z"/></svg>
+          <span class="play__text"><small>Get it on</small><b>Google Play</b></span>
+        </a>
+      </div>
+
+      <dl class="inner__meta mono rise-txt">
+        <div><dt>Genre</dt><dd>Arcade</dd></div>
+        <div><dt>Controls</dt><dd>One thumb</dd></div>
+        <div><dt>Platform</dt><dd>Android</dd></div>
+      </dl>
+    </div>
+
+    <footer class="inner__foot mono">
+      <span>&copy; AppsNja</span>
+      <nav aria-label="Legal">
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="mailto:support.appsnja@gmail.com">Support</a>
+      </nav>
+    </footer>
+  </main>
+
+  <script src="../assets/js/config.js"></script>
+  <script src="../assets/js/orbit-render.js"></script>
+  <script src="../assets/js/abyss.js"></script>
+  <script src="../assets/js/cursor.js"></script>
+  <script src="../assets/js/app-page.js"></script>
+</body>
+</html>

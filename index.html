@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <script src="assets/js/config.js"></script>
+  <script>
+    (function () {
+      var h = location.hash.slice(1);
+      if (h && APPS.some(function (a) { return a.slug === h; })) { location.replace(h + '/'); return; }
+      try { if (sessionStorage.getItem('appsnja:return')) document.documentElement.classList.add('is-return'); } catch (e) {}
+    })();
+  </script>
+  <title>AppsNja</title>
+  <meta name="description" content="AppsNja makes small games and apps. Tiny worlds, made deep in the dark.">
+  <meta name="theme-color" content="#04050a">
+  <meta property="og:title" content="AppsNja">
+  <meta property="og:description" content="Tiny worlds, made deep in the dark.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/BarlowCondensed-800i.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/JetBrainsMono.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="is-intro page-landing">
+  <canvas id="abyss" class="abyss" aria-hidden="true"></canvas>
+  <div class="veil" aria-hidden="true"></div>
+
+  <div class="cursor" aria-hidden="true">
+    <span class="cursor__dot"></span>
+    <span class="cursor__ring"><span class="cursor__label">Open</span></span>
+  </div>
+
+  <main id="landing" class="view view--landing">
+    <header class="hud hud--top">
+      <a class="brand mono" href="./" aria-label="AppsNja home"><span>Apps</span><span>Nja</span></a>
+      <div class="tx mono" id="tx">
+        <p class="tx__head" aria-hidden="true"><span class="blink">&#9679;</span><span class="tx__label">RX</span><span class="tx__meta" id="tx-meta"></span></p>
+        <p class="tx__line" id="tx-line" aria-hidden="true"></p>
+        <p class="sr-only" id="tx-static"></p>
+      </div>
+    </header>
+
+    <section class="hero" aria-label="AppsNja">
+      <p class="eyebrow mono reveal" style="--d:.2s">Independent studio &mdash; below the surface</p>
+      <h1 class="title" aria-label="AppsNja">
+        <span class="line"><span class="reveal" style="--d:.35s">Apps</span></span>
+        <span class="line"><span class="reveal" style="--d:.5s">Nja</span></span>
+      </h1>
+      <p class="lede reveal" style="--d:.7s"><span id="tagline-lead">Tiny worlds,</span> made deep in the dark.</p>
+    </section>
+
+    <footer class="hud hud--bottom">
+      <p class="mono depth">Depth <b id="depth">0000</b> m</p>
+      <p class="mono hint">Find the signal, then open it</p>
+      <a class="mono link" href="mailto:support.appsnja@gmail.com">Contact</a>
+    </footer>
+
+    <nav id="satellites" class="satellites" aria-label="Apps"></nav>
+  </main>
+
+  <template id="satellite-template">
+    <a class="satellite" href="">
+      <span class="satellite__float">
+        <svg class="satellite__orbits" viewBox="0 0 200 200" aria-hidden="true">
+          <g class="orbit orbit--a"><ellipse cx="100" cy="100" rx="96" ry="30"/><circle class="moon" cx="196" cy="100" r="2.6"/></g>
+          <g class="orbit orbit--b"><ellipse cx="100" cy="100" rx="90" ry="44"/><circle class="moon moon--warm" cx="10" cy="100" r="2"/></g>
+          <circle class="tick-ring" cx="100" cy="100" r="74"/>
+        </svg>
+        <span class="satellite__body"><canvas class="satellite__screen" width="160" height="160" aria-hidden="true"></canvas></span>
+        <span class="satellite__label mono"><span class="satellite__name"></span><span class="satellite__cta">Open &#8599;</span></span>
+      </span>
+    </a>
+  </template>
+
+  <div id="portal" class="portal" aria-hidden="true"></div>
+
+  <script src="assets/js/orbit-render.js"></script>
+  <script src="assets/js/abyss.js"></script>
+  <script src="assets/js/cursor.js"></script>
+  <script src="assets/js/landing.js"></script>
+</body>
+</html>
