@@ -42,16 +42,25 @@
         <p class="rise-txt">Guide a neon snake around circular orbits.</p>
         <p class="rise-txt">Jump between rings, eat orbs, dodge asteroids.</p>
         <p class="rise-txt">Chase a new best score, or take on the Daily Challenge.</p>
-        <a id="play-link" class="play rise-txt" href="#" target="_blank" rel="noopener">
-          <svg class="play__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3.5v17l14-8.5z"/></svg>
-          <span class="play__text"><small>Get it on</small><b>Google Play</b></span>
-        </a>
+        <div class="stores rise-txt">
+          <p class="stores__soon mono" id="stores-soon"><span class="stores__dot" aria-hidden="true"></span>Coming soon</p>
+          <div class="stores__row">
+            <a class="play is-soon" data-store="playStoreUrl" data-lead="Get it on" aria-disabled="true">
+              <svg class="play__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3.5v17l14-8.5z"/></svg>
+              <span class="play__text"><small></small><b>Google Play</b></span>
+            </a>
+            <a class="play is-soon" data-store="appStoreUrl" data-lead="Download on the" aria-disabled="true">
+              <svg class="play__icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.6" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="18" r="1.2"/></svg>
+              <span class="play__text"><small></small><b>App Store</b></span>
+            </a>
+          </div>
+        </div>
       </div>
 
       <dl class="inner__meta mono rise-txt">
         <div><dt>Genre</dt><dd>Arcade</dd></div>
         <div><dt>Controls</dt><dd>One thumb</dd></div>
-        <div><dt>Platform</dt><dd>Android</dd></div>
+        <div><dt>Platform</dt><dd>Android &middot; iOS<span class="soon-tag" data-soon-for="appStoreUrl">Soon</span></dd></div>
       </dl>
     </div>
 

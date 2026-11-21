@@ -14,14 +14,23 @@
   const colors = app.satellite || {};
   if (colors.accent) body.style.setProperty('--mint', colors.accent);
 
-  /* Google Play link */
-  const play = document.getElementById('play-link');
-  const url = app.playStoreUrl || '#';
-  play.href = url;
-  if (url === '#') {
-    play.removeAttribute('target');
-    play.addEventListener('click', function (e) { e.preventDefault(); });
-  }
+  /* Store badges: each stays "coming soon" until its URL in config.js is a real link */
+  const isLive = function (key) { const u = String(app[key] || '').trim(); return u && u !== '#' ? u : ''; };
+  const badges = document.querySelectorAll('.stores [data-store]');
+  let live = 0;
+  badges.forEach(function (a) {
+    const url = isLive(a.dataset.store);
+    if (!url) return;
+    a.href = url;
+    a.target = '_blank';
+    a.rel = 'noopener';
+    a.removeAttribute('aria-disabled');
+    a.classList.remove('is-soon');
+    a.querySelector('small').textContent = a.dataset.lead || '';
+    live++;
+  });
+  if (badges.length && live === badges.length) document.getElementById('stores-soon').hidden = true;
+  document.querySelectorAll('[data-soon-for]').forEach(function (el) { if (isLive(el.dataset.soonFor)) el.remove(); });
 
   const scene = new OrbitScene(document.getElementById('card-screen'), { rings: 4, scale: 0.4, cy: 0.46, stars: 70, still: reduced, colors: colors });
 

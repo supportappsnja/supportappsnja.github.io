@@ -12,7 +12,7 @@
     p.x = e.clientX; p.y = e.clientY;
     const t = e.target.closest ? e.target : null;
     cursor.classList.toggle('is-open', !!(t && t.closest('.satellite')) && !body.classList.contains('is-diving'));
-    cursor.classList.toggle('is-link', !!(t && t.closest('a, .play')));
+    cursor.classList.toggle('is-link', !!(t && t.closest('a[href]')));
   }, { passive: true });
   (function tick() {
     p.rx += (p.x - p.rx) * 0.16; p.ry += (p.y - p.ry) * 0.16;
