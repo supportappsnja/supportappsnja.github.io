@@ -1,4 +1,4 @@
-/* Orbit Snake miniature: a neon snake travelling on concentric rings. */
+/* Snek Hop miniature: a neon snake travelling on concentric rings. */
 (function () {
   function rgb(hex, fallback) {
     const m = /^#?([0-9a-f]{6})$/i.exec(hex || '');

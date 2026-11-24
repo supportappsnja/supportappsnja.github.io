@@ -1,7 +1,7 @@
 {
   "name": "AppsNja",
   "short_name": "AppsNja",
-  "description": "AppsNja is an independent studio crafting tiny worlds deep in the dark — small, polished games and apps. Home of Orbit Snake, soon on Android and iOS.",
+  "description": "AppsNja is an independent studio crafting tiny worlds deep in the dark — small, polished games and apps. Home of Snek Hop, soon on Android and iOS.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",

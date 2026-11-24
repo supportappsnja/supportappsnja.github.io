@@ -7,16 +7,17 @@
   <script>
     (function () {
       var h = location.hash.slice(1);
-      if (h && APPS.some(function (a) { return a.slug === h; })) { location.replace(h + '/'); return; }
+      var app = h && APPS.filter(function (a) { return a.slug === h || (a.aliases || []).indexOf(h) > -1; })[0];
+      if (app) { location.replace(app.slug + '/'); return; }
       try { if (sessionStorage.getItem('appsnja:return')) document.documentElement.classList.add('is-return'); } catch (e) {}
     })();
   </script>
   <title>AppsNja — Independent Studio</title>
-  <meta name="description" content="AppsNja is an independent studio crafting tiny worlds deep in the dark — small, polished games and apps. Home of Orbit Snake, soon on Android and iOS.">
+  <meta name="description" content="AppsNja is an independent studio crafting tiny worlds deep in the dark — small, polished games and apps. Home of Snek Hop, soon on Android and iOS.">
   <meta name="theme-color" content="#04050a">
   <link rel="canonical" href="https://supportappsnja.github.io/">
   <meta property="og:title" content="AppsNja — Independent Studio">
-  <meta property="og:description" content="AppsNja is an independent studio crafting tiny worlds deep in the dark — small, polished games and apps. Home of Orbit Snake, soon on Android and iOS.">
+  <meta property="og:description" content="AppsNja is an independent studio crafting tiny worlds deep in the dark — small, polished games and apps. Home of Snek Hop, soon on Android and iOS.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://supportappsnja.github.io/">
   <meta property="og:image" content="https://supportappsnja.github.io/assets/og/home.png">
@@ -25,7 +26,7 @@
   <meta property="og:image:alt" content="AppsNja over the abyss. Tiny worlds, made deep in the dark.">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="AppsNja — Independent Studio">
-  <meta name="twitter:description" content="AppsNja is an independent studio crafting tiny worlds deep in the dark — small, polished games and apps. Home of Orbit Snake, soon on Android and iOS.">
+  <meta name="twitter:description" content="AppsNja is an independent studio crafting tiny worlds deep in the dark — small, polished games and apps. Home of Snek Hop, soon on Android and iOS.">
   <meta name="twitter:image" content="https://supportappsnja.github.io/assets/og/home.png">
   <meta name="twitter:image:alt" content="AppsNja over the abyss. Tiny worlds, made deep in the dark.">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -38,7 +39,7 @@
     "name": "AppsNja",
     "url": "https://supportappsnja.github.io/",
     "logo": "https://supportappsnja.github.io/assets/icons/icon-512.png",
-    "description": "AppsNja is an independent studio crafting tiny worlds deep in the dark — small, polished games and apps. Home of Orbit Snake, soon on Android and iOS."
+    "description": "AppsNja is an independent studio crafting tiny worlds deep in the dark — small, polished games and apps. Home of Snek Hop, soon on Android and iOS."
   }
   </script>
   <link rel="preload" href="assets/fonts/BarlowCondensed-800i.woff2" as="font" type="font/woff2" crossorigin>
@@ -73,7 +74,7 @@
       <p class="lede reveal" style="--d:.7s"><span id="tagline-lead">Tiny worlds,</span> made deep in the dark.</p>
       <noscript>
         <p class="lede">AppsNja. Tiny worlds, made deep in the dark.</p>
-        <p class="lede"><a href="orbit-snake/">Orbit Snake</a> &mdash; guide a neon snake around circular orbits. Jump between rings, eat orbs, dodge asteroids.</p>
+        <p class="lede"><a href="snek-hop/">Snek Hop</a> &mdash; guide a neon snake around circular orbits. Jump between rings, eat orbs, dodge asteroids.</p>
       </noscript>
     </section>
 
